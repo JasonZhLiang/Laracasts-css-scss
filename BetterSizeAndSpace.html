@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="text-xs lg:text-base">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Responsive Demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!-- below is a common way to solve the font size issue in mobile by hardcoding pixel , this is not a good way -->
+    <!--<style type="text/css">-->
+    <!--h1{ font-size: 40px;}-->
+    <!--h2{ font-size: 35px;}-->
+    <!--h3{ font-size: 28px;}-->
+    <!--h4{ font-size: 22px;}-->
+
+    <!--@media screen and (max-width:767px){-->
+    <!--h1{ font-size: 30px;}-->
+    <!--h2{ font-size: 22px;}-->
+    <!--h3{ font-size: 20px;}-->
+    <!--h4{ font-size: 18px;}-->
+    <!--}-->
+    <!--</style>-->
+    <!-- we will use new unit type rem instead of using pixel rem -- root element -->
+    <style type="text/css">
+        html {font-size:16px;}
+        /*h1{ font-size: 40px;}*/
+        /*h2{ font-size: 35px;}*/
+        /*h3{ font-size: 28px;}*/
+        /*h4{ font-size: 22px;}*/
+        @media screen and (max-width:992px){
+            html{font-size:14px;}
+        }
+        @media screen and (max-width:767px){
+            html{font-size:12px;}
+        }
+        /*40/16 = 2.5rem  this is formula for convert pixel to rem, 16px is root element size */
+
+        h1{ font-size: 2.5rem;}
+        h2{ font-size: 2.187rem;}
+        h3{ font-size: 1.75rem;}
+        h4{ font-size: 1.375rem;}
+        /*now since the root element change form 16px to 12px, so the font size will change accordingly.*/
+
+        .section{padding-left: 20px; padding-right: 20px;}
+        .content > * {margin-bottom: 1em;}
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container mx-auto">
+            <header class="">
+                <h1 class="text-3xl mb-8">Laracasts</h1>
+            </header>
+
+            <main class="content">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, dolorum non placeat porro qui! Ab aspernatur, atque consectetur corporis deleniti, ea explicabo nisi officiis quae quas quos repudiandae tempore!</p>
+                <h2>Our Mission</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet deleniti et ipsa ipsam nihil rerum sequi vel voluptatum? Architecto dolorem enim, ipsam laudantium non provident recusandae reprehenderit tempore veniam.</p>
+                <h3>How We Get There...</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquam dignissimos dolore error ex in ipsa iure, labore laborum maiores necessitatibus nostrum quae quasi ut? Esse magnam sit voluptatibus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquam dignissimos dolore error ex in ipsa iure, labore laborum maiores necessitatibus nostrum quae quasi ut? Esse magnam sit voluptatibus!</p>
+            </main>
+            <footer class="">
+                Copyright 2018
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

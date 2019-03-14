@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pricing Plans</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="dist/pricing.css"><!--by using laravel-mix to with webpack to compile the pricing.scss to this common css file-->
+    <!--<link rel="stylesheet" href="css/output.css">-->
+    <!--after doing the following steps:
+    npm install tailwindcss --save-dev
+    ./node_modules/.bin/tailwind init twconfig.js //using this excutable taiwind to generate default tailwind configuration file - tailwind.js or other filename
+    add three lines to your css file (pricing.css) @tailwind preflight;@tailwind components;@tailwind utilities;
+    ./node_modules/.bin/tailwind build ./css/pricing.css [-c ./twconfig.js] [-o ./css/output.css] [--no-autoprefixer]
+    you will get this output.css file
+    -->
+</head>
+<style>
+    html,body{
+        font-family:"Open Sans", sans-serif;
+    ;}
+</style>
+
+<body class="p-6">
+<div class="container mx-auto">
+    <div class="flex justify-around">
+        <div class="flex flex-col justify-between shadow p-6 mx-2 w-1/4 text-center">
+            <div class="flex justify-between mb-6">
+                <h5 class="text-grey-darker uppercase tracking-tight">Monthly</h5>
+                <a href="#" class="no-underline text-blue flex items-baseline font-bold leading-none">
+                    <span class="text-lg">$</span>
+                    <span class="text-4xl">15</span>
+                </a>
+
+            </div>
+
+            <img src="data:image/png;base64,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" alt="Monthly Plan">
+
+            <p class="mb-8 py-4 text-grey-darker leading-normal">
+                Still Undecided? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet dolor eligendi excepturi, expedita ipsa iusto maiores necessitatibus omnis provident quibusdam, ratione, reiciendis repellendus saepe voluptatum? Omnis placeat ullam unde?
+            </p>
+
+            <a href="#" class="btn btn-blue font-semibold ">Start Learning</a>
+        </div>
+        <div class="flex flex-col justify-between shadow p-6 mx-2 w-1/4 text-center">
+            <div class="flex justify-between mb-6">
+                <h5 class="text-grey-darker uppercase tracking-tight">Monthly</h5>
+                <a href="#" class="no-underline text-blue flex items-baseline font-bold leading-none">
+                    <span class="text-lg">$</span>
+                    <span class="text-4xl">15</span>
+                </a>
+
+            </div>
+
+            <img src="data:image/png;base64,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" alt="Monthly Plan">
+
+            <p class="mb-8 py-4 text-grey-darker leading-normal">
+                Still Undecided? Lorem ipsum dolor sit amet,
+            </p>
+
+            <a href="#" class="btn btn-blue font-semibold ">Start Learning</a>
+        </div>
+        <div class="flex flex-col justify-between shadow p-6 mx-2 w-1/4 text-center">
+            <div class="flex justify-between mb-6">
+                <h5 class="text-grey-darker uppercase tracking-tight">Monthly</h5>
+                <a href="#" class="no-underline text-blue flex items-baseline font-bold leading-none">
+                    <span class="text-lg">$</span>
+                    <span class="text-4xl">15</span>
+                </a>
+
+            </div>
+
+            <img src="data:image/png;base64,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" alt="Monthly Plan">
+
+            <p class="mb-8 py-4 text-grey-darker leading-normal">
+                Still Undecided? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet dolor eligendi
+            </p>
+
+            <a href="#" class="btn btn-blue font-semibold ">Start Learning</a>
+        </div>
+        <div class="flex flex-col justify-between shadow p-6 mx-2 w-1/4 text-center">
+            <div class="flex justify-between mb-6">
+                <h5 class="text-grey-darker uppercase tracking-tight">Monthly</h5>
+                <a href="#" class="no-underline text-blue flex items-baseline font-bold leading-none">
+                    <span class="text-lg">$</span>
+                    <span class="text-4xl">15</span>
+                </a>
+
+            </div>
+
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABaCAMAAACFWShxAAABF1BMVEX///8aXa3uKT0AVqoVW6wAUagATacAU6kAX7ENWasAS6YAT6gASKXwKDsAQ6MARaT2JTTs8PcqZLBAcLWOps/W3u309vq5x+Dh6PL7Ii3J1OfyJzhagb1Re7pjhb+svdvtACXtDiyAm8ltjsPhLkijQ3fnK0PdMEycsNQ1WqacRXuzP21GWKJ8TYz/4+M2arLMNluHS4b4q7DxXmleVJn1lZzeTWP+8fI7Tp1sUZOqOm3qO0v80NKwJmH+ICbvcHv8Rk36vcDzfYXja3uyT3rdP1lWZqntAA8AN6DDHFDbg5VkYqKdfqdwcKrBOmLXWHFlP4q5Zonoq7R+X5jwUF1GRZaLO3roxs/fABK0oLzJEkeBLHWwF1UBVodnAAAKW0lEQVRogb1a+WOjuBUGJEACe8JtwNjYkAPncs5mckwyk9003XYne02n2+P//zuqA7CxEXHaad8PMw4IPr33vndIQpLeJkFg23YQvPGpN0vgp9nYlc2eYRg9TXbHWer/j0D9InFMFWAslwIhBqrpJGn4raFCz1H1GkeWFz8hVtV58S01jEdbAMpLgnN3+U+ob+X+N8IauBqWmwJdBzavYC2JN3nZcfft2DVXXszx1q5gM3ndgVeXXXftxFzVS4yKtew1tPMu3VKjDQuDGgdnjTs67Dbn5bn4XjA229TBSUHhXAo3D8dNVTWvA+zs+U54L5SBwHxzKEMn1SmyuzpGHQmj4WwiVm1gtLGDa0DuQA7TwhZdQJbLyfOVCCzV2sDmzI9wlf/NuaitznucTIWELLTWN3ljlfwLCr0DjVhzsP7C82n/dkMwWJoMghFzF6AadGhnrGp3fDtUJiKKpMbyw1jFjuNgFdAcUoOkXfptNeE+PfcVoR3jBvOBOwhISQvjzNHGi/zYaUwIlqnyOFGU4RcBmN1IwSCX4sSBjpsN7IG7SlQRXbBTB8Lx7VRR+kMRH53lBAIdKdMw4TwEKsjs2FGXAeBIBAdG5dvOJn1FETsta9hI8xeMgaCX2yleCmi9mIuMabKscvyFWJGAfdrIaUQ1CoYrqwE1DfOlEaJ0w+ZJIno6ZGBnAjCpGbk4o+g4A3VMq27YkWaWH3XvvkwVBiYMa68ZR3pKUzBOAHYGAw6HjdSed+hUCpq9MI8pyvRRBGYbzWfUAVVLxqMEuKOKPVoe5B3BzbDkfYsZsQtMylcmbcY5xYDz+bLxdNcuVqbVxEKnuxbHUiZisHA1Papxxmtn01MY2qnQeQgdbVdYHT5bV01Wmd/WBWp+rLbCMb36NZiQjUQ1sPoC4A3aPQTNuA0OyQsbkgwy/VUMJq1XEpyvGbeCU+N41XdotlNh9ft7JF393NU4zNcmS6JbRAdSVxpwCM0O+hWW9XSgDJVD5Ii76LW5EukFibDH68WDOq0gdHESDUt/DfunO5Z1gpCsiZuwrIUQ6kBcyKDqp1qp1te9qKLG0DqYnVjWDZKpJ4RobW/E40AcWaSMZSpV60CpaTiMXmazbWt4hPgIkSnDXqu5pJG4XSYvS8DpnlWZsD+MTg7R0dDaPUR8hNCU7SZTB4IYkKkF8W/H/VqtvjV8OUToILJeUAlGQkiAlvO6ojNhLsQAANKOskQCQSlwgXW4s31/fkcTfZ9i7d4cYjR7ioanqJ4QdAVovK1y04KKR1P/2CPihKzezL2MC+8OGDGmz7cPD5/Onn9/PreivVMZ4eQ3ZfL02XUXLcRWO1iglpbjfxII5uKBkYX0jl41ieQGsdPpk2VNHstm4+ru6l/EhDICf454Yixq62vt60i/HPCnEpyYDCe0S8Es5CAs2eWbs9OTiDiL58CrY7pKsinD0OFedMsbELtGa2tliVRkeFf+nZqk/NL8onu+IbPfXH4aMl4MH+gfZ9N//HMchAFBQ6fD6EPV2Y0rIoOiFa1KkrWhXYxHFA3q5KcM6qXgZVn/2crvVEdITb1MR/JJ1L926rlXWQa0x7cHmrpJvsZ1I0BEObKW+Bu/fkz7w741YU6zE1XFajgnQRa90CnZNndEZUnqjRbJFmilYzPV5V1RL8zff5Wkh7JPu7Us5WT/r/y1kp26xsj/4V4h2cOMpUEZYFWphPNWtBzXaGNOCBswNBJXv5xPSWetlN31rzfXM4TMhfsHX88eXmaIPZvr/Fpc0gA6q0BMxgu0UTm/gszLme3vEVpMz6S7CXeVFLxDjUlfnd//HtKniZ8Dp1rglGngdbTkXWklotvTPWPg87H0uPvh7/wyL0KV/8+eSaeTpiptnamzx/xyyQMB2pIlE718gvBit09yrTV8kqQ/AlAWx5JwOln9SHe3zzTGgpAs+41Qyra0LR4FZZIXoC2xJMFmnbo/RtbewfV7wn/bLvkmBZhbCZuz7yYR76rigUpt68dxXBkGd7CkioAtatTZ99Xl769JokIrq002M4DRaT/a+wtXpQjnenN3htcUQQRUBYfo9uNJVPeB5bogkAa2OxqVj9Isp8WfnyJrH2Ge6rI8fhdLMc3jXklpnT4qqN5l5kIE7SGylB/sJTTqecMf9HDPr6xEMrA1+cN7w5AZgUPcs4lXc5XUpF7KBzEmCDIXy8podkOW/ncfrmcV4+gyBNJEDmQS7tWCOlUv9ibTT5IdhkwRm9RCzy/ZWlmULc4EWZlUHCQfRB+PA9umDXJV40lkONQ1hTaW3LoSH0TRg1T3HIWJeZWmBoLz6jpVTlBxJARv7pWDa6PX6zEXAsiEmBJDrWfospFKskrrun6xG+3+HHvvXC+NB2musvFJnI0SSGM8HxPJiWBhNZV+sZ6OZLQo8jJHo89nvK81/ZB4HqEbKzqQ0VyX6c6yWW0B61nK9xchrkQYbmfTnw6XoRpSvg/K0qCHLraj3YuWkXDug8XYUkDbnuWn6eOV3drhNVFdKSMe22mflukTE+CxwydWXlvv8O5uH2ixWl8GrIn+48f7vTbF2M2COAqP2UZVtQ2irnevd7yZ8F5bTVPORpfCVTDOU/IGQJgCxz6fepWiW8TvWt1SMEJF5YLMaqvVCHDEGl29IL/nGR9itkcbE7dry5pQ8d46QIAkrxivDySJGr/zaTxzC4Eq4wklFdkIYNa+7V4Tj6kkiu21ebEgMcK69wEF3XhuZWQlNm7nCfByvG+RLofRw6SZb3X7Fbok23t+iQYK4FJqqp1HIFWN443/khVJ+2YdVVSkG+Ota8haN8g3IfCoC0wKtHKiZPh8sQpH1/3oabbgvS63bwaZYXNPv/fK6Y7HKyCLBb4bCInL9iNrpxFjcN3ihBXQpY0WrCP7FdVoIWBD2aKm3B/P8QnhvSin1WAeaeELWjtAvcNivHpwldas8rjj0GclOiGOW9tKKc8FcNXIkQRpM+6oCWAX9VePdaTFuhc4KfmJjmg3QGe8tu8JR4T0bu5CgDGEWJVD5gc4tl3PpRbd4AwwXMQceRnaKfM9HjlraAlNwnKSZXniuuOUrvjZNEdsAat1pJGFFDWvCNjLPbUiC4glmPJ/bkQMHDf3iiKvN2K568V7Fw1JqqeQvB1RLvK96jrAnNWta3peC0AzM+D2KrouQVkt0OHu8Jp1/BktwlXnTlm6atR1ARufFIecjBfWdhnRbEO0xoAbgLUUUaHEdF17cV/mxco2r2PUUnWUG8IZ6Oh+f2nXYwOERQ6RtfaOVSiD0+hoAYazDeD0Oq+abwSTzoaHS1Z0beEJypLUCetNZiRyqVyFYOGo9eNRscDeGwjC5IEepwajRVbZxG+lgs5bP5I4L7fwvdZj/E7R8rd+IKHUW/gx3tyCVLCxUW5ckqvp8hZ+tvZFRAeWObbfCCadN4/Kwte+VFhguW+lB5G1Q8A42UA/bLhvNaJI/HxL7zxPB1uj/0AvoQSFq6vtzSbWVcf79p8GpeO2r5DkUfGtPtJZkcAfeLnr/D++sFoC/a++Hvs34ZzaLyPHr3wAAAAASUVORK5CYII=" alt="Monthly Plan">
+
+            <p class="mb-8 py-4 text-grey-darker leading-normal">
+                Still Undecided? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet dolor eligendi excepturi, expedita ipsa iusto maiores necessitatibus
+            </p>
+
+            <a href="#" class="btn btn-blue font-semibold ">Start Learning</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
